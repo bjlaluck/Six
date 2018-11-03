@@ -16,10 +16,12 @@ def create
       currency: "cad",
       source: token,
       description: params[:stripeEmail]
+      receipt_email: @user.email
     )
 
     if charge.paid
       Order.create(user_id: current_user.id, product_id: params[:product_id], total: @product.price.to_i)
+
     end
 
 
