@@ -20,4 +20,5 @@ class UserMailer < ApplicationMailer
     mail(from: "bohdanlaluck@hotmail.com",
        to: email,
        subject: "Your order receipt from Bikes Berlin")
+  end
 end
