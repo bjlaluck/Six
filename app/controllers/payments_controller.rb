@@ -15,7 +15,7 @@ def create
       amount: @product.price.to_i,
       currency: "cad",
       source: token,
-      description: params[:stripeEmail]
+      description: params[:stripeEmail],
       receipt_email: @user.email
     )
 
