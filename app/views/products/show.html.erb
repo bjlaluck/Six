@@ -33,9 +33,12 @@
       <div class="rated better-text" data-score="<%= @product.average_rating %>"></div>
     </p>
     <p>
-      <%= form_with(url: '/payments/create') do |form| %>
+
+      <%= form_with(url: '/payments') do |form| %>
         <%= render partial: "shared/stripe_checkout_button" %>
+        <%= form.hidden_field :product_id, value: @product.id %>
       <% end %>
+
     </p>
 </div>
 
