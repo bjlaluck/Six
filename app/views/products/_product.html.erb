@@ -3,10 +3,10 @@
     <%= image_tag(product.image_url, class: "img-fluid img-responsive img-modify") %>
       <h1><%= product.name %></h1></a>
       <p><%= product.description %></p><hr>
-      <h2>$ <%= product.price %></h2>
+      <h2>$ <%= product.price/100 %></h2>
 
       <%= link_to 'Show', product %>
-      
+
       <% if signed_in? && current_user.admin? %>
         <%= link_to ('<span class="glyphicon glyphicon-edit"></span>').html_safe, edit_product_path(product)  %>
       <% end %>
