@@ -1,6 +1,12 @@
 class Product < ApplicationRecord
 
-  validates :name, presence: true
+validates :name, presence: true
+validates :description, presence: true
+validates :image_url, presence: true, format: {with: /\.(png|jpg|jpeg|tif|tiff|bmp|gif|eps)\Z/i, message: "as does not end in image format"}
+validates :colour, presence: true
+validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
+
+
   has_many :orders
   has_many :comments
 
