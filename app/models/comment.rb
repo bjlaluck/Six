@@ -5,10 +5,10 @@ class Comment < ApplicationRecord
   scope :rating_desc, -> {order(rating: :desc)}
   scope :rating_asc, -> {order(rating: :asc)}
 
-  validates :body, presence: true
-  validates :user, presence: true
-  validates :product, presence: true
-  validates :rating, numericality: {only_integer: true}
+  validates_presence_of :body, presence: true
+  validates_presence_of :user, presence: true
+  validates_presence_of :product, presence: true
+  validates_presence_of :rating, numericality: {only_integer: true}
 
   after_create_commit { CommentUpdateJob.perform_later(self, self.user) }
 

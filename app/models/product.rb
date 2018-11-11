@@ -9,6 +9,9 @@ validates :price, presence: true, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, num
 
   has_many :orders
   has_many :comments
+  accepts_nested_attributes_for :comments
+  validates_associated :comments
+
 
   def self.search(search_term)
     if Rails.env.development?
