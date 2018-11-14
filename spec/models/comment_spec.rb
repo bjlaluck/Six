@@ -14,6 +14,14 @@ describe Product do
     it "returns the average rating of all comments" do
       expect(product.average_rating). to equal(3.0)
     end
+
+    it "returns the lowest rating first" do
+      expect(product.lowest_rating_comment.rating). to eq(1)
+    end
+
+    it "returns the highest rating first" do
+      expect(product.highest_rating_comment.rating). to eq(5)
+    end
   end
 
   context "when comments being created" do
