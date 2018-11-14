@@ -12,7 +12,7 @@ describe ProductsController, type: :controller do
 
     end
 
-        it "creates a new product if all fields appropriate" do
+        it "creates a new product if all fields appropriate and leaves message of success" do
           params = {
             name: "aa", description: "aa", image_url: "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", colour: "dd", price: 3.33
           }
@@ -40,7 +40,7 @@ describe ProductsController, type: :controller do
         @product = product
        end
 
-           it "updates an attribute of a product if fields match data-types" do
+           it "updates an attribute of a product if fields match data-types and shows message of success" do
              params = {
                name: "Jimmy", description: "Hoffa", image_url: "http://www.remadays.com/wp-content/uploads/2016/11/Picture_online-2015.jpg", colour: "brown", price: 1.99
              }
@@ -106,7 +106,7 @@ describe ProductsController, type: :controller do
            sign_in user2
            @product = product
           end
-        it 'should delete product' do
+        it 'should delete product and show message' do
           expect{delete :destroy, params: {id: @product}}.to change(Product,:count).by(-1)
           expect(flash[:notice]).to eq 'Product was successfully destroyed.'
 
