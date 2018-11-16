@@ -111,5 +111,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'section-five.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'section-six.herokuapp.com' }
 end
