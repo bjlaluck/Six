@@ -1,0 +1,1524 @@
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116010729)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116010729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181116010729"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-11-15 20:22:11 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 1576ms (Views: 1493.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:22:17 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe7e10581d0>-20181103123413 (0.2ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/1-20181103123329339251 (0.7ms)
+Product: Allied Alfa
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/1-20181103123329339251 (0.2ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/2-20181103123347322417 (0.1ms)
+Product: Kona Sutra
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/2-20181103123347322417 (0.1ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/3-20181103123357650160 (0.2ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/3-20181103123357650160 (0.1ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/4-20181103123413833590 (0.2ms)
+Product: Evil Following MB
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/4-20181103123413833590 (0.1ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/5-20181022200537329532 (0.2ms)
+Product: Allied Alfa
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/5-20181022200537329532 (0.1ms)
+  Rendered collection of products/_product.html.erb [5 times] (14.8ms)
+Write fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe7e10581d0>-20181103123413 (0.4ms)
+  Rendered products/index.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 92ms (Views: 87.0ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" decimal)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:26:39.800798"], ["updated_at", "2018-11-16 01:26:39.800798"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" decimal)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:26:39.930547"], ["updated_at", "2018-11-16 01:26:39.930547"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-11-16 01:26:39.941013"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:26:40.028970"], ["updated_at", "2018-11-16 01:26:40.028970"], ["colour", "Blue"], ["price", 7920.22]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:26:40.035706"], ["updated_at", "2018-11-16 01:26:40.035706"], ["colour", "Navy"], ["price", 1861.95]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:26:40.045515"], ["updated_at", "2018-11-16 01:26:40.045515"], ["colour", "Gray"], ["price", 4450.45]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (16.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:26:40.052051"], ["updated_at", "2018-11-16 01:26:40.052051"], ["colour", "Dark Gray"], ["price", 7399.76]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateProducts (20180707231821)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180707231821_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180707231821"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColorToProducts (20180710001409)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "products" ADD "color" varchar[0m
+  ↳ db/migrate/20180710001409_add_color_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180710001409"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to RenameColorsInProducts (20180710003740)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour")
+                     SELECT "id","name","description","image_url","created_at","updated_at","color" FROM "products"[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","image_url","created_at","updated_at","colour")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour" FROM "aproducts"[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20180710003740_rename_colors_in_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180710003740"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddPriceToProducts (20180712005844)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "products" ADD "price" decimal[0m
+  ↳ db/migrate/20180712005844_add_price_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180712005844"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20180715132240)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/migrate/20180715132240_create_orders.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/migrate/20180715132240_create_orders.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/migrate/20180715132240_create_orders.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180715132240"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181005214143)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181005214143_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181005214143"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20181005220237)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:7
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:40
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20181005220237_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181005220237"]]
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateComments (20181010232848)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_03de2dc08c"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_a0d280f6e4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20181010232848_create_comments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/migrate/20181010232848_create_comments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/migrate/20181010232848_create_comments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181010232848"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddAdminFlagToUsers (20181024225512)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 0 NOT NULL[0m
+  ↳ db/migrate/20181024225512_add_admin_flag_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181024225512"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116010729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181116010729"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:28:14.640600"], ["updated_at", "2018-11-16 01:28:14.640600"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116010729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" decimal DEFAULT NULL)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "products"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" decimal DEFAULT NULL)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "aproducts"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:13
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181116010729"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116010729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" decimal DEFAULT NULL)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "products"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "aproducts"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20181116010729_change_decimal_to_integer.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181116010729"]]
+  ↳ bin/rails:9
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:40:07 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe6b767a930>- (0.1ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+Write fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe6b767a930>- (0.1ms)
+  Rendered products/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 360ms (Views: 343.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:40:10 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe6bb6c14f8>- (0.1ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+Write fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fe6bb6c14f8>- (0.1ms)
+  Rendered products/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 50ms (Views: 45.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:40:22.139234"], ["updated_at", "2018-11-16 01:40:22.139234"], ["colour", "Blue"], ["price", 7920]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:40:22.144230"], ["updated_at", "2018-11-16 01:40:22.144230"], ["colour", "Navy"], ["price", 1861]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:40:22.147320"], ["updated_at", "2018-11-16 01:40:22.147320"], ["colour", "Gray"], ["price", 4450]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:40:22.151350"], ["updated_at", "2018-11-16 01:40:22.151350"], ["colour", "Dark Gray"], ["price", 7399]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:40:40 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fb447085db0>-20181116014022 (0.1ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/1-20181116014022139234 (0.6ms)
+Product: Allied Alfa
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/1-20181116014022139234 (0.4ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/2-20181116014022144230 (0.3ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/2-20181116014022144230 (0.2ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/3-20181116014022147320 (0.2ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/3-20181116014022147320 (0.1ms)
+Read fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/4-20181116014022151350 (0.2ms)
+Product: Evil Following MB
+Write fragment views/products/_product:7e98ec81a654f52c6cb34de31dfafcf6/products/4-20181116014022151350 (0.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (16.3ms)
+Write fragment views/products/index:c09330e5b460339e467576bbb6c12864/products/all-#<Product::ActiveRecord_Relation:0x00007fb447085db0>-20181116014022 (0.4ms)
+  Rendered products/index.html.erb within layouts/application (44.5ms)
+Completed 200 OK in 406ms (Views: 387.1ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:45:07.878193"], ["updated_at", "2018-11-16 01:45:07.878193"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:45:07.883319"], ["updated_at", "2018-11-16 01:45:07.883319"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:45:07.889716"], ["updated_at", "2018-11-16 01:45:07.889716"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:45:07.895666"], ["updated_at", "2018-11-16 01:45:07.895666"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:45:17 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:0e59f45413364e3c97879591ee620c9e/products/all-#<Product::ActiveRecord_Relation:0x00007ff47c7df848>-20181116014507 (0.2ms)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/1-20181116014022139234 (0.5ms)
+Product: Allied Alfa
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/1-20181116014022139234 (0.1ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/2-20181116014022144230 (1.0ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/2-20181116014022144230 (0.2ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/3-20181116014022147320 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/3-20181116014022147320 (0.1ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/4-20181116014022151350 (0.1ms)
+Product: Evil Following MB
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/4-20181116014022151350 (0.1ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/5-20181116014507878193 (0.1ms)
+Product: Allied Alfa
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/5-20181116014507878193 (0.1ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/6-20181116014507883319 (0.1ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/6-20181116014507883319 (0.5ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/7-20181116014507889716 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/7-20181116014507889716 (0.1ms)
+Read fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/8-20181116014507895666 (0.2ms)
+Product: Evil Following MB
+Write fragment views/products/_product:1bdd7342e77fe8a997af26f418d3a32e/products/8-20181116014507895666 (0.1ms)
+  Rendered collection of products/_product.html.erb [8 times] (21.7ms)
+Write fragment views/products/index:0e59f45413364e3c97879591ee620c9e/products/all-#<Product::ActiveRecord_Relation:0x00007ff47c7df848>-20181116014507 (0.4ms)
+  Rendered products/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 391ms (Views: 373.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products/5" for 127.0.0.1 at 2018-11-15 20:45:48 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:a371fa5135f9a224a6e2999d7b3a9570/products/5-20181116014507878193 (0.2ms)
+Write fragment views/products/show:a371fa5135f9a224a6e2999d7b3a9570/products/5-20181116014507878193 (0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 5]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.6ms)
+  Rendered products/_new_comment.html.erb (0.5ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 5], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.6ms)
+  Rendered products/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 113ms (Views: 70.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:48:56 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f99639c5b9552f1afd6725a9a3695e21/products/all-#<Product::ActiveRecord_Relation:0x00007ff47debe528>-20181116014507 (0.2ms)
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/1-20181116014022139234 (2.2ms)
+Product: Allied Alfa
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/1-20181116014022139234 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/2-20181116014022144230 (0.1ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/2-20181116014022144230 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/3-20181116014022147320 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/3-20181116014022147320 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/4-20181116014022151350 (0.3ms)
+Product: Evil Following MB
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/4-20181116014022151350 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/5-20181116014507878193 (0.1ms)
+Product: Allied Alfa
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/5-20181116014507878193 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/6-20181116014507883319 (0.1ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/6-20181116014507883319 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/7-20181116014507889716 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/7-20181116014507889716 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/8-20181116014507895666 (0.1ms)
+Product: Evil Following MB
+Write fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/8-20181116014507895666 (0.1ms)
+  Rendered collection of products/_product.html.erb [8 times] (66.6ms)
+Write fragment views/products/index:f99639c5b9552f1afd6725a9a3695e21/products/all-#<Product::ActiveRecord_Relation:0x00007ff47debe528>-20181116014507 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (104.1ms)
+Completed 200 OK in 187ms (Views: 181.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:48:59 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f99639c5b9552f1afd6725a9a3695e21/products/all-#<Product::ActiveRecord_Relation:0x00007ff4823b0a78>-20181116014507 (0.1ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/1-20181116014022139234 (0.2ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/2-20181116014022144230 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/3-20181116014022147320 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/4-20181116014022151350 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/5-20181116014507878193 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/6-20181116014507883319 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/7-20181116014507889716 (0.1ms)
+Read fragment views/products/_product:7af2851954a11a829119ca6b2bc190a5/products/8-20181116014507895666 (0.1ms)
+  Rendered collection of products/_product.html.erb [8 times] (6.9ms)
+Write fragment views/products/index:f99639c5b9552f1afd6725a9a3695e21/products/all-#<Product::ActiveRecord_Relation:0x00007ff4823b0a78>-20181116014507 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:52:57 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ff482262540>-20181116014507 (0.1ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116014022139234 (0.2ms)
+Product: Allied Alfa
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116014022139234 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116014022144230 (0.1ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116014022144230 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116014022147320 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116014022147320 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116014022151350 (0.1ms)
+Product: Evil Following MB
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116014022151350 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/5-20181116014507878193 (0.1ms)
+Product: Allied Alfa
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/5-20181116014507878193 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/6-20181116014507883319 (0.1ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/6-20181116014507883319 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/7-20181116014507889716 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/7-20181116014507889716 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/8-20181116014507895666 (0.1ms)
+Product: Evil Following MB
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/8-20181116014507895666 (0.1ms)
+  Rendered collection of products/_product.html.erb [8 times] (12.7ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ff482262540>-20181116014507 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 85ms (Views: 80.8ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (42.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:53:31.993473"], ["updated_at", "2018-11-16 01:53:31.993473"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:53:32.088420"], ["updated_at", "2018-11-16 01:53:32.088420"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-11-16 01:53:32.102381"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:53:32.149494"], ["updated_at", "2018-11-16 01:53:32.149494"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (15.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:53:32.174492"], ["updated_at", "2018-11-16 01:53:32.174492"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:53:32.188816"], ["updated_at", "2018-11-16 01:53:32.188816"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:53:32.193409"], ["updated_at", "2018-11-16 01:53:32.193409"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:53:42.533796"], ["updated_at", "2018-11-16 01:53:42.533796"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:53:42.541861"], ["updated_at", "2018-11-16 01:53:42.541861"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:53:42.548621"], ["updated_at", "2018-11-16 01:53:42.548621"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:53:42.554330"], ["updated_at", "2018-11-16 01:53:42.554330"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:53:49 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ffc3a146368>-20181116015342 (0.1ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015332149494 (0.5ms)
+Product: Allied Alfa
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015332149494 (0.4ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015332174492 (0.2ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015332174492 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015332188816 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015332188816 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015332193409 (0.7ms)
+Product: Evil Following MB
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015332193409 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/5-20181116015342533796 (0.3ms)
+Product: Allied Alfa
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/5-20181116015342533796 (0.3ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/6-20181116015342541861 (0.4ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/6-20181116015342541861 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/7-20181116015342548621 (0.1ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/7-20181116015342548621 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/8-20181116015342554330 (0.1ms)
+Product: Evil Following MB
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/8-20181116015342554330 (0.5ms)
+  Rendered collection of products/_product.html.erb [8 times] (35.1ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ffc3a146368>-20181116015342 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 402ms (Views: 384.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 20:54:02 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:a371fa5135f9a224a6e2999d7b3a9570/products/1-20181116015332149494 (0.3ms)
+Write fragment views/products/show:a371fa5135f9a224a6e2999d7b3a9570/products/1-20181116015332149494 (0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.6ms)
+  Rendered products/_new_comment.html.erb (0.6ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.5ms)
+  Rendered products/show.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 80ms (Views: 64.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:54:28 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ffc3f0593b0>-20181116015342 (0.1ms)
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015332149494 (0.4ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015332174492 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015332188816 (0.4ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015332193409 (0.3ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/5-20181116015342533796 (0.3ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/6-20181116015342541861 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/7-20181116015342548621 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/8-20181116015342554330 (0.2ms)
+  Rendered collection of products/_product.html.erb [8 times] (10.6ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007ffc3f0593b0>-20181116015342 (0.6ms)
+  Rendered products/index.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 126ms (Views: 119.1ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (18.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (26.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:55:25.430364"], ["updated_at", "2018-11-16 01:55:25.430364"]]
+  ↳ db/schema.rb:13
+  [1m[35m (41.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116010729)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 01:55:25.616678"], ["updated_at", "2018-11-16 01:55:25.616678"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-11-16 01:55:25.624909"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 01:55:25.654862"], ["updated_at", "2018-11-16 01:55:25.654862"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (7.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 01:55:25.670440"], ["updated_at", "2018-11-16 01:55:25.670440"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 01:55:25.699822"], ["updated_at", "2018-11-16 01:55:25.699822"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 01:55:25.706707"], ["updated_at", "2018-11-16 01:55:25.706707"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:55:38 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0c8d24fe8>-20181116015525 (0.2ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015525654862 (0.6ms)
+Product: Allied Alfa
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015525654862 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015525670440 (0.2ms)
+Product: Kona Sutra
+
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015525670440 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015525699822 (0.2ms)
+Product: Budnitz No. 3
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015525699822 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015525706707 (0.2ms)
+Product: Evil Following MB
+Write fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015525706707 (0.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (31.8ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0c8d24fe8>-20181116015525 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 447ms (Views: 417.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:56:23 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0cae2f210>-20181116015525 (0.1ms)
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015525654862 (0.3ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015525670440 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015525699822 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015525706707 (0.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (5.4ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0cae2f210>-20181116015525 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 80ms (Views: 76.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 20:56:25 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:793caf339547f8945d96b62fe4b21780/products/1-20181116015525654862 (0.2ms)
+Write fragment views/products/show:793caf339547f8945d96b62fe4b21780/products/1-20181116015525654862 (0.1ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.5ms)
+  Rendered products/_new_comment.html.erb (0.4ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.6ms)
+  Rendered products/show.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 107ms (Views: 61.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 20:56:32 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0caf042f8>-20181116015525 (0.2ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/1-20181116015525654862 (0.3ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/2-20181116015525670440 (0.2ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/3-20181116015525699822 (0.1ms)
+Read fragment views/products/_product:a0d3d1c8e3f0c3a697a30393341508be/products/4-20181116015525706707 (0.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (6.1ms)
+Write fragment views/products/index:538591e8bf30df7299f6b916e03d8971/products/all-#<Product::ActiveRecord_Relation:0x00007fc0caf042f8>-20181116015525 (0.3ms)
+  Rendered products/index.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 181ms (Views: 173.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 20:57:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 100ms (Views: 86.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 20:57:51 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDSe04rJByY+xZfQjw18OZLld+tXaSonTvxJ2cLuPWQMx0PEuyvFAtI26UVqJPHMhMWWiHwWUuLnvpnV5Y+vZg==", "user"=>{"email"=>"b@b.ca", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "b@b.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EDSe04rJByY+xZfQjw18OZLld+tXaSonTvxJ2cLuPWQMx0PEuyvFAtI26UVqJPHMhMWWiHwWUuLnvpnV5Y+vZg==", "user"=>{"email"=>"b@b.ca", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 231ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-15 20:57:56 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 95ms (Views: 93.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 21:00:16 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lpnSSGSNUQl+vSM9FwBTidIppklEub1Dake+43ExsImHgruFij4WE7+EZJSJCzJgiAyZ8RupkY2oMeGsCAZkPQ==", "user"=>{"email"=>"a@a.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-11-16 02:00:17.143449"], ["updated_at", "2018-11-16 02:00:17.143449"], ["email", "a@a.ca"], ["encrypted_password", "$2a$11$2vJMFvAyxtKK987CdJcB0O4DWTr.I768gu50WIZTtbEt7kM/alFn."]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:00:17 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 21:00:19 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4irwg+yxjMqqO6OpTyFUJ0hyWy0XSAkrnxRA7/3OcGy/alg1b/Urb7BLNFYr7TOEG3SaSiA15wCi2KdMhrJmBg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:00:19 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 21:00:22 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-15 21:00:23 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 87ms (Views: 85.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 21:00:35 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JZF3pKHTqcwMqSN6457k82VuaVxAmVOfz1OQzS4cH0E8KgShObPKzzmDnqGH9KsPTcf+U2+sHHUDJwAquv9Ciw==", "user"=>{"email"=>"b@b.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "b@b.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-11-16 02:00:36.031733"], ["updated_at", "2018-11-16 02:00:36.031733"], ["email", "b@b.ca"], ["encrypted_password", "$2a$11$uQ5lRqRpI7PTXRl9bxcNJu8m6HwVkkSlL8vlH95FOojNyAaKdOL1S"]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 172ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 21:00:36 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 78ms (Views: 72.9ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-11-16 02:04:53.179136"], ["admin", 1], ["id", 1]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
