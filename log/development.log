@@ -1,0 +1,1297 @@
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116032204)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" decimal DEFAULT NULL)[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" decimal)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181024225512)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 03:23:03.968254"], ["updated_at", "2018-11-16 03:23:03.968254"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" decimal)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181024225512)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 03:23:04.080810"], ["updated_at", "2018-11-16 03:23:04.080810"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-11-16 03:23:04.086874"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeDecimalToInteger (20181116032204)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" decimal DEFAULT NULL)[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" text DEFAULT NULL, "image_url" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar DEFAULT NULL, "price" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","image_url","created_at","updated_at","colour","price")
+                     SELECT "id","name","description","image_url","created_at","updated_at","colour","price" FROM "aproducts"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20181116032204_change_decimal_to_integer.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181116032204"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:25:22 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fe916620aa0>- (7.2ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of templates [0 times] (0.0ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fe916620aa0>- (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:15
+  Rendered products/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 1498ms (Views: 1455.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:25:23 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:25:23 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 03:25:35.089350"], ["updated_at", "2018-11-16 03:25:35.089350"], ["colour", "Blue"], ["price", 7920]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 03:25:35.095973"], ["updated_at", "2018-11-16 03:25:35.095973"], ["colour", "Navy"], ["price", 1861]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 03:25:35.102205"], ["updated_at", "2018-11-16 03:25:35.102205"], ["colour", "Gray"], ["price", 4450]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 03:25:35.106825"], ["updated_at", "2018-11-16 03:25:35.106825"], ["colour", "Dark Gray"], ["price", 7399]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:25:48 -0500
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f8c0bbef408>-20181116032535 (2.8ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032535089350 (2.3ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032535095973 (2.1ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032535102205 (2.1ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032535106825 (2.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (20.1ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f8c0bbef408>-20181116032535 (1.4ms)
+  Rendered products/index.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 490ms (Views: 464.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:25:49 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:25:49 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:25:53 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032535089350 (0.6ms)
+Write fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032535089350 (0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms)
+  Rendered products/_new_comment.html.erb (0.8ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.8ms)
+  Rendered products/show.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 125ms (Views: 100.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:25:55 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f8c0df23050>-20181116032535 (0.9ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032535089350 (1.2ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032535095973 (3.1ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032535102205 (0.8ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032535106825 (0.6ms)
+  Rendered collection of products/_product.html.erb [4 times] (13.3ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f8c0df23050>-20181116032535 (0.6ms)
+  Rendered products/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 149ms (Views: 140.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:25:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032535089350 (0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.8ms)
+  Rendered products/_new_comment.html.erb (0.9ms)
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (2.6ms)
+  Rendered products/show.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 118ms (Views: 107.5ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:26:49 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:26:49 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:26:51 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032535089350 (4.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (6.1ms)
+  Rendered products/_new_comment.html.erb (2.0ms)
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (2.6ms)
+  Rendered products/show.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 494ms (Views: 431.1ms | ActiveRecord: 4.6ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:26:52 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:26:52 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:26:52 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:26:55 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 125ms (Views: 117.1ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:26:55 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:26:56 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:26:56 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/simple_pages/contact" for 127.0.0.1 at 2018-11-15 22:26:58 -0500
+Processing by SimplePagesController#contact as HTML
+  Rendering simple_pages/contact.html.erb within layouts/application
+  Rendered simple_pages/contact.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:27:00 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 157ms (Views: 151.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:27:01 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fbfb031d928>-20181116032535 (0.6ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032535089350 (0.7ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032535095973 (0.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032535102205 (0.5ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032535106825 (0.5ms)
+  Rendered collection of products/_product.html.erb [4 times] (6.3ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fbfb031d928>-20181116032535 (0.7ms)
+  Rendered products/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:27:04 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032535089350 (1.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (1.1ms)
+  Rendered products/_new_comment.html.erb (0.6ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.7ms)
+  Rendered products/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 74ms (Views: 66.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 03:27:23.383582"], ["updated_at", "2018-11-16 03:27:23.383582"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 03:27:23.387588"], ["updated_at", "2018-11-16 03:27:23.387588"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 03:27:23.391183"], ["updated_at", "2018-11-16 03:27:23.391183"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 03:27:23.394811"], ["updated_at", "2018-11-16 03:27:23.394811"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:27:28 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:27:29 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:27:29 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fa89f138cc0>-20181116032723 (4.8ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032535089350 (3.2ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032535095973 (1.4ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032535102205 (1.3ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032535106825 (1.5ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/5-20181116032723383582 (1.8ms)
+Write fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/5-20181116032723383582 (1.8ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/6-20181116032723387588 (2.0ms)
+Write fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/6-20181116032723387588 (1.7ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/7-20181116032723391183 (0.8ms)
+Write fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/7-20181116032723391183 (3.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/8-20181116032723394811 (38.1ms)
+Write fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/8-20181116032723394811 (0.5ms)
+  Rendered collection of products/_product.html.erb [8 times] (101.9ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fa89f138cc0>-20181116032723 (0.9ms)
+  Rendered products/index.html.erb within layouts/application (143.7ms)
+Completed 200 OK in 746ms (Views: 704.8ms | ActiveRecord: 2.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116032204)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 03:27:43.086377"], ["updated_at", "2018-11-16 03:27:43.086377"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "body" text, "rating" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_product_id" ON "comments" ("product_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_user_id" ON "comments" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "orders"[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "product_id" integer, "total" float)[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_product_id" ON "orders" ("product_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX "index_orders_on_user_id" ON "orders" ("user_id")[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:34
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "image_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "colour" varchar, "price" integer)[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:44
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "admin" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (25.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:44
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181116032204)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181010232848),
+(20181024225512),
+(20180710001409),
+(20180707231821),
+(20180710003740),
+(20180715132240),
+(20180712005844),
+(20181005214143),
+(20181005220237);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-11-16 03:27:43.165289"], ["updated_at", "2018-11-16 03:27:43.165289"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-11-16 03:27:43.171063"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Allied Alfa"], ["description", "Best Racing Bike - This American-made masterpiece evokes the handling and feel of an old-school steel racer in a carbon frame with the weight, stiffness, and performance of a fully modern machine. "], ["image_url", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/allied-alfa-1523988058.jpg"], ["created_at", "2018-11-16 03:27:43.232790"], ["updated_at", "2018-11-16 03:27:43.232790"], ["colour", "Blue"], ["price", 792022]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kona Sutra\n"], ["description", "Best Touring Bike - If you are planning a long distance tour on a bicycle, and have the budget to buy a really good one, then the Kona Sutra should definitely be a front runner. Has hearstapps, integrated mud guards and a rear pannier rack, the touring-focused tiers and saddle."], ["image_url", "https://i0.wp.com/tomsbiketrip.com/wp-content/uploads/2017/01/kona-sutra-2018.jpg"], ["created_at", "2018-11-16 03:27:43.240858"], ["updated_at", "2018-11-16 03:27:43.240858"], ["colour", "Navy"], ["price", 186195]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Budnitz No. 3"], ["description", "Best Commuter Bike - The Budnitz No. 3 is a commuter bike that has a mean streak and likes to be ridden fast. The steel (or titanium) frame has a semi-racy geometry and accommodates 29-inch wheels which allow you to run tires up to 2.35-inches wide."], ["image_url", "https://budnitzbicycles.com/media/bike_images/2223/large_budnitz-bicycles_No.3.3_Ti_Hero.jpg"], ["created_at", "2018-11-16 03:27:43.247957"], ["updated_at", "2018-11-16 03:27:43.247957"], ["colour", "Gray"], ["price", 445045]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "image_url", "created_at", "updated_at", "colour", "price") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Evil Following MB"], ["description", "Best All-Terrain Bike - Unbelievable control and freakish speed breeding meet epic efficiency and practical versatility.  Benchmark-resetting short-travel control and speed; efficient and agile enough for XC singletrack hustling; carbon-rich kit collection."], ["image_url", "https://www.outsideonline.com/sites/default/files/styles/img_850-width_flex-height/public/2018/05/13/evil-the-following-mb-goty_h.jpg"], ["created_at", "2018-11-16 03:27:43.251798"], ["updated_at", "2018-11-16 03:27:43.251798"], ["colour", "Dark Gray"], ["price", 739976]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:18
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:27:57 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:27:57 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:27:58 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6bfb23160>-20181116032743 (3.9ms)
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (2.9ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (1.2ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.2ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (1.3ms)
+  Rendered collection of products/_product.html.erb [4 times] (16.5ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6bfb23160>-20181116032743 (1.4ms)
+  Rendered products/index.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 401ms (Views: 384.3ms | ActiveRecord: 1.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:27:59 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:27:59 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:27:59 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:28:03 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 81ms (Views: 74.9ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:04 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:28:04 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:04 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:28:06 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6c51e2910>-20181116032743 (0.4ms)
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.0ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (0.7ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.0ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (0.9ms)
+  Rendered collection of products/_product.html.erb [4 times] (10.3ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6c51e2910>-20181116032743 (1.1ms)
+  Rendered products/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:28:09 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032743232790 (1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  Rendered shared/_stripe_checkout_button.html.erb (0.7ms)
+  Rendered products/_new_comment.html.erb (0.5ms)
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (2.7ms)
+  Rendered products/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 98ms (Views: 81.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:28:12 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6c5269730>-20181116032743 (4.8ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (1.8ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (3.0ms)
+  Rendered collection of products/_product.html.erb [4 times] (19.6ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007fd6c5269730>-20181116032743 (0.9ms)
+  Rendered products/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 164ms (Views: 157.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:28:13 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 85ms (Views: 69.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-15 22:28:14 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 89ms (Views: 86.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 22:28:26 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eqZfkZHjwXdA4foCgOnj+eepFnJ2rxcC0qFkOmTegqMJzdNqoDz3RfAZJGMcGSSWUG9MFOPgblsiyLs1Qmq81Q==", "user"=>{"email"=>"a@a.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "a@a.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-11-16 03:28:26.804569"], ["updated_at", "2018-11-16 03:28:26.804569"], ["email", "a@a.ca"], ["encrypted_password", "$2a$11$k1i56hqOUKo/RuYYAR.Rq.M.HEzwMJ4nZWjEo2ffc1qMgog68v0bO"]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 248ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:28:26 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 102ms (Views: 94.7ms | ActiveRecord: 0.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:26 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:28:27 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:27 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:28:28 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zldn43BBtZC7N0i4j+mJBR1E4oBLz1pomp4LiqsDeEf0rrFvHPJb5gehNloD8ZUDUXSM66D4Bruc9l9IOzCjRQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:28:28 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.3ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:28 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:28:29 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:29 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:28:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 65ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-11-15 22:28:31 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 113ms (Views: 111.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-11-15 22:28:41 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/neXwTzq1J9l843bWtMuCgM705Es6CtMwQ11EinbGoWZ8sifRvWsMCqD85ahCZo4ga0/+rxzfXRjrVDWszV9bg==", "user"=>{"email"=>"b@b.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Register"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "b@b.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-11-16 03:28:41.442593"], ["updated_at", "2018-11-16 03:28:41.442593"], ["email", "b@b.ca"], ["encrypted_password", "$2a$11$.ZDvzHeruetExlaNjU9s..slOZNiFvs89v.cKieZORyqDdeD9Xsga"]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 167ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:28:41 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 65ms (Views: 60.1ms | ActiveRecord: 0.7ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:41 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:28:41 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:28:41 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "admin" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2018-11-16 03:29:21.294186"], ["admin", 1], ["id", 1]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:29:39 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:71
+Completed 404 Not Found in 26ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_out):
+  
+app/controllers/users_controller.rb:71:in `set_user'
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:29:46 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (26.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 444ms (Views: 426.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:29:47 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:29:47 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:29:49 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GDGpVyaxA6kIUftc/nkLCUcaYbmeRvasVkp2DUGGW+EARdxW5gMJsFyZ6Ez+qCgjFX1FM77/sszZ5k5pf9t0Ww=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:29:49 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 86ms (Views: 83.7ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:29:49 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:29:49 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:29:49 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:29:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 75ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:29:52 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7SJH6bxfn5K5sGSTgvNy9YFJVVrN5OIVlVYvKApcB6Lsh5CcAFG7C/XJD9A2E0Vyyclx+OxgQuM0R5GL9pz5Zw==", "user"=>{"email"=>"b@b.ca", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "b@b.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 223ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:29:53 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 119ms (Views: 112.1ms | ActiveRecord: 0.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:29:53 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:29:53 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:29:53 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:29:54 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c23495f8>-20181116032743 (4.4ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:12
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (1.0ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.0ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (1.0ms)
+  Rendered collection of products/_product.html.erb [4 times] (10.1ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c23495f8>-20181116032743 (1.4ms)
+  Rendered products/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 94ms (Views: 90.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:29:56 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032743232790 (1.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/shared/_stripe_checkout_button.html.erb:1
+  Rendered shared/_stripe_checkout_button.html.erb (1.8ms)
+  Rendered products/_new_comment.html.erb (8.7ms)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.5ms)
+  Rendered products/show.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 91ms (Views: 74.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:29:59 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c4591b10>-20181116032743 (1.9ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:12
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (1.4ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.4ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (1.1ms)
+  Rendered collection of products/_product.html.erb [4 times] (17.7ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c4591b10>-20181116032743 (1.0ms)
+  Rendered products/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 142ms (Views: 136.1ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:30:00 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/sbJhY+6SDF5n2W38rtnzIK03gpZarbQy3hSmffkKVYStutEJ5FbTgzwFWkKscLomVYBcs4Kul2Sgqzw8FvIqw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:30:00 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 63ms (Views: 59.6ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:00 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:30:00 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:00 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:30:03 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-11-15 22:30:09 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9lepDRcGCTkKvsnOV9Aydw25ySPXNn7x23IaxZ+5nxDmi4jPpi9O13q31aOL4fiomTIzT1DW1MFA5PNAq9sJIQ==", "user"=>{"email"=>"a@a.ca", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "a@a.ca"], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 181ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:30:09 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:53
+Completed 200 OK in 98ms (Views: 94.1ms | ActiveRecord: 0.5ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:09 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:30:09 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:09 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:30:11 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c0dcc9c8>-20181116032743 (1.0ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:12
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (0.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (0.6ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (0.7ms)
+  Rendered collection of products/_product.html.erb [4 times] (17.0ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c0dcc9c8>-20181116032743 (0.7ms)
+  Rendered products/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2018-11-15 22:30:13 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:82
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:19
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:1accf6b3a4d2e7f34b2db91c040aa274/products/1-20181116032743232790 (0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT AVG("comments"."rating") FROM "comments" WHERE "comments"."product_id" = ?[0m  [["product_id", 1]]
+  ↳ app/models/product.rb:24
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_stripe_checkout_button.html.erb:1
+  Rendered shared/_stripe_checkout_button.html.erb (2.0ms)
+  Rendered products/_new_comment.html.erb (1.4ms)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."product_id" = ? ORDER BY created_at DESC LIMIT ? OFFSET ?[0m  [["product_id", 1], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/products/_comments.html.erb:2
+  Rendered products/_comments.html.erb (1.6ms)
+  Rendered products/show.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 80ms (Views: 70.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:30:16 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c46098e0>-20181116032743 (1.5ms)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:12
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (0.9ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.1ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (0.8ms)
+  Rendered collection of products/_product.html.erb [4 times] (25.5ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c46098e0>-20181116032743 (0.7ms)
+  Rendered products/index.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 163ms (Views: 157.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2018-11-15 22:30:23 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (2.6ms)
+  Rendered products/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 97ms (Views: 60.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2018-11-15 22:30:25 -0500
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT MAX("products"."updated_at") FROM "products"[0m
+  ↳ app/helpers/products_helper.rb:4
+Read fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c556f898>-20181116032743 (0.9ms)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:8
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/1-20181116032743232790 (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:12
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/2-20181116032743240858 (1.2ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/3-20181116032743247957 (1.7ms)
+Read fragment views/products/_product:904244b0ce48f7eb142393c8f61c98bd/products/4-20181116032743251798 (1.4ms)
+  Rendered collection of products/_product.html.erb [4 times] (18.4ms)
+Write fragment views/products/index:f6f7eefd17dda8107ed394644866a5dd/products/all-#<Product::ActiveRecord_Relation:0x00007f82c556f898>-20181116032743 (1.4ms)
+  Rendered products/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 112ms (Views: 105.0ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-11-15 22:30:30 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2s0zUJPC+OJDuIo8R6pgxNRnLgM5qnh0EKAZVVF/p6LPLj0ktbGyCHiVj+ifKTYFQcapDpt7VxwmRHrZoJeMGw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/bohdanlaluck/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-11-15 22:30:30 -0500
+Processing by SimplePagesController#landing_page as HTML
+  Rendering simple_pages/landing_page.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/simple_pages/landing_page.html.erb:4
+  Rendered simple_pages/landing_page.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 94ms (Views: 90.4ms | ActiveRecord: 0.4ms)
+
+
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:30 -0500
+ProductChannel stopped streaming from product_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-15 22:30:30 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-15 22:30:30 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductChannel is transmitting the subscription confirmation
+ProductChannel is streaming from product_channel
