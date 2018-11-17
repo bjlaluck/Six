@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :email, presence: true
-  validates :password, presence: true
+  validates :password, presence: true, on: :create
 end

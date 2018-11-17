@@ -20,7 +20,7 @@
    <% end %>
     <p>
       <div class="side-to-side">Cost(<i class="fas fa-dollar-sign"></i>):</div>
-      <div class="better-text"><%= @product.price/100 %></div>
+      <div class="better-text"><%= @product.price.fdiv(100) %></div>
     </p>
 
     <p>
